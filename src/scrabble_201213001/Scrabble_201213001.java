@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package scrabble_201213001;
-
+import Ventanas.Inicio;
 /**
  *
  * @author Alessandra
@@ -15,7 +15,8 @@ public class Scrabble_201213001 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Inicio in = new Inicio();
+        in.setVisible(true);
     }
     
 }
