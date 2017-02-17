@@ -84,7 +84,9 @@ public class Inicio extends javax.swing.JFrame {
     private void Cargar_ArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cargar_ArchivoActionPerformed
         file.showOpenDialog(this);
         String ruta = file.getSelectedFile().getAbsolutePath();
-        cxml.cargarDimension(ruta);
+        //cxml.cargarDimension(ruta);
+        //cxml.cargarDiccionario(ruta);
+        //cxml.cargarCasilla(ruta);
         System.out.println(""+ruta);
     }//GEN-LAST:event_Cargar_ArchivoActionPerformed
 
