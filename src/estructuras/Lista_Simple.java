@@ -21,10 +21,10 @@ public class Lista_Simple {
         return inicio == null;
     }
     
-    public void  ingresar(String Ficha, int puntuacion){
+    public void  ingresar(String Ficha, int totalFichas, int puntuacion){
         NodoFicha nuevo = new NodoFicha();
         
-        nuevo.NodoFicha(Ficha, puntuacion);
+        nuevo.NodoFicha(Ficha,totalFichas, puntuacion);
         
         if(esVacia()){
             inicio = nuevo;
@@ -53,18 +53,4 @@ public class Lista_Simple {
     
     
     
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
 }

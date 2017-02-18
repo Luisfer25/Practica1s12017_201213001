@@ -10,5 +10,64 @@ package estructuras;
  * @author Alessandra
  */
 public class NodoJugador {
+    private String Nombre_Jugador;
+    private int totalPuntos;
+    Lista_Simple fichas;
+    private NodoJugador siguiente;
+
+    
+    NodoJugador(){
+        this.Nombre_Jugador= null;
+        this.totalPuntos = 0;
+        this.fichas = new Lista_Simple();
+        this.siguiente = null;
+    }
+    
+    public void NodoJugador(String Nombre_Jugador){
+        this.setNombre_Jugador(Nombre_Jugador);
+        this.setSiguiente(null);
+    }
+
+    /**
+     * @return the Nombre_Jugador
+     */
+    public String getNombre_Jugador() {
+        return Nombre_Jugador;
+    }
+
+    /**
+     * @param Nombre_Jugador the Nombre_Jugador to set
+     */
+    public void setNombre_Jugador(String Nombre_Jugador) {
+        this.Nombre_Jugador = Nombre_Jugador;
+    }
+
+    /**
+     * @return the totalPuntos
+     */
+    public int getTotalPuntos() {
+        return totalPuntos;
+    }
+
+    /**
+     * @return the siguiente
+     */
+    public NodoJugador getSiguiente() {
+        return siguiente;
+    }
+
+    /**
+     * @param siguiente the siguiente to set
+     */
+    public void setSiguiente(NodoJugador siguiente) {
+        this.siguiente = siguiente;
+    }
+
+    /**
+     * @param totalPuntos the totalPuntos to set
+     */
+    public void setTotalPuntos(int totalPuntos) {
+        this.totalPuntos = totalPuntos;
+    }
     
 }

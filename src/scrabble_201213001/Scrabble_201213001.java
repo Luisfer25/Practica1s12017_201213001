@@ -5,6 +5,7 @@
  */
 package scrabble_201213001;
 import Ventanas.Inicio;
+import estructuras.*;
 /**
  *
  * @author Alessandra
@@ -17,6 +18,10 @@ public class Scrabble_201213001 {
     public static void main(String[] args) {
         Inicio in = new Inicio();
         in.setVisible(true);
+        
+        
+        
+        
     }
     
 }

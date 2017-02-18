@@ -11,20 +11,25 @@ package estructuras;
  */
 public class NodoFicha {
 
+   
+
     
     private String Ficha;
     private int puntuacion;
+    private int totalFichas;
     NodoFicha siguiente;
     
     NodoFicha(){
         this.Ficha=null;
         this.puntuacion=0;
+        this.totalFichas=0;
         this.siguiente = null;
     }
     
-    public void NodoFicha(String Ficha, int puntuacion){
+    public void NodoFicha(String Ficha,int totalFichas, int puntuacion){
         this.setFicha(Ficha);
         this.setPuntuacion(puntuacion);
+        this.setTotalFichas(totalFichas);
         this.siguiente = null;
     }
     
@@ -54,6 +59,20 @@ public class NodoFicha {
      */
     public void setPuntuacion(int puntuacion) {
         this.puntuacion = puntuacion;
+    }
+    
+     /**
+     * @return the totalFichas
+     */
+    public int getTotalFichas() {
+        return totalFichas;
+    }
+
+    /**
+     * @param totalFichas the totalFichas to set
+     */
+    public void setTotalFichas(int totalFichas) {
+        this.totalFichas = totalFichas;
     }
     
 }
