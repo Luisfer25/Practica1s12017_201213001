@@ -10,7 +10,7 @@ package estructuras;
  * @author Alessandra
  */
 public class Lista_Simple {
-    NodoFicha siguiente;
+    
     NodoFicha inicio;
     
     Lista_Simple(){
