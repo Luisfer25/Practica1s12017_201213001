@@ -20,7 +20,8 @@ public class Inicio extends javax.swing.JFrame {
     
     JFileChooser file = new JFileChooser();
     CargarXML cxml = new CargarXML();
-    
+   
+            
     public Inicio() {
         initComponents();
     }
@@ -46,6 +47,11 @@ public class Inicio extends javax.swing.JFrame {
         jLabel1.setText("SCRABBLE");
 
         jugar.setText("INICIAR");
+        jugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jugarActionPerformed(evt);
+            }
+        });
 
         Cargar_Archivo.setText("LEER ARCHIVO");
         Cargar_Archivo.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +96,12 @@ public class Inicio extends javax.swing.JFrame {
         //cxml.cargarCasilla(ruta);
         System.out.println(""+ruta);
     }//GEN-LAST:event_Cargar_ArchivoActionPerformed
+
+    private void jugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugarActionPerformed
+        Ingreso_Jugadores ingreso = new Ingreso_Jugadores();
+        ingreso.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jugarActionPerformed
 
     /**
      * @param args the command line arguments

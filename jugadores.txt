@@ -1,0 +1,1 @@
+Digraph g{"car"->"dd""dd"->"ss""ss"->"car"}

@@ -11,9 +11,6 @@ package estructuras;
  */
 public class NodoFicha {
 
-   
-
-    
     private String Ficha;
     private int puntuacion;
     private int totalFichas;

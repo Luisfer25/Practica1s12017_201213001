@@ -4,16 +4,14 @@
  * and open the template in the editor.
  */
 package Ventanas;
-
+import estructuras.*;
 /**
  *
  * @author Alessandra
  */
 public class Vent_Principal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Vent_Principal
-     */
+    Lista_Circular lista_jugadores = new Lista_Circular();
+    Cola colaFicha =  new Cola();
     public Vent_Principal() {
         initComponents();
         
@@ -35,7 +33,6 @@ public class Vent_Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 700));
         setMinimumSize(new java.awt.Dimension(1000, 700));
-        setPreferredSize(new java.awt.Dimension(1000, 700));
 
         Panel_Matriz.setMaximumSize(new java.awt.Dimension(540, 540));
         Panel_Matriz.setMinimumSize(new java.awt.Dimension(540, 540));
@@ -143,4 +140,68 @@ public class Vent_Principal extends javax.swing.JFrame {
     private javax.swing.JPanel Panel2;
     private javax.swing.JPanel Panel_Matriz;
     // End of variables declaration//GEN-END:variables
+
+public void ingresoJugador(String nombre){
+    this.lista_jugadores.Agregar_Jugador(nombre);
+    //this.lista_jugadores.Imprimir();
+}
+
+public void imprimirLista(){
+    this.lista_jugadores.graficar_Jugador();
+}
+
+public void cargarFichas_Cola(String Letra){
+    this.colaFicha.enColar(Letra);
+}
+
+public void random_Letra(){
+    //String[] abecedario ={"A","B","C","D","E","F","G","H","I","J","L","M","N","Ñ","O","P","Q","R","S","T","U","V","X","Y","Z"};
+    Lista_Letras list =  new Lista_Letras();
+    int numero;
+    int cantidad;
+    list.ingresar(1,"A", 12);
+    list.ingresar(2,"B", 2);
+    list.ingresar(3,"C", 4);
+    list.ingresar(4,"D", 5);
+    list.ingresar(5,"E", 12);
+    list.ingresar(6,"F", 1);
+    list.ingresar(7,"G", 2);
+    list.ingresar(8,"H", 2);
+    list.ingresar(9,"I", 6);
+    list.ingresar(10,"J", 1);
+    list.ingresar(11,"L", 4);
+    list.ingresar(12,"M", 2);
+    list.ingresar(13,"N", 5);
+    list.ingresar(14,"Ñ", 1);
+    list.ingresar(15,"O", 9);
+    list.ingresar(16,"P", 2);
+    list.ingresar(17,"Q", 1);
+    list.ingresar(18,"R", 5);
+    list.ingresar(19,"S", 6);
+    list.ingresar(20,"T", 4);
+    list.ingresar(21,"U", 5);
+    list.ingresar(22,"V", 1);
+    list.ingresar(23,"X", 1);
+    list.ingresar(24,"Y", 1);
+    list.ingresar(25,"Z", 1);
+
+    while(!list.esVacia()){
+    numero = (int)(Math.random()*25)+1;
+    cantidad = list.buscar_cantidad(numero);
+    
+    if(cantidad>0){
+    this.cargarFichas_Cola(list.buscar_letra(numero));
+    list.modificar_valor(numero, cantidad-1);
+    }else{
+        list.Eliminar(numero);
+    }
+    }
+            
+    
+}
+
+
+
+
+
 }

@@ -12,7 +12,7 @@ package estructuras;
 public class NodoJugador {
     private String Nombre_Jugador;
     private int totalPuntos;
-    Lista_Simple fichas;
+    private Lista_Simple fichas;
     private NodoJugador siguiente;
 
     
@@ -26,6 +26,22 @@ public class NodoJugador {
     public void NodoJugador(String Nombre_Jugador){
         this.setNombre_Jugador(Nombre_Jugador);
         this.setSiguiente(null);
+    }
+    
+    
+
+    /**
+     * @return the fichas
+     */
+    public Lista_Simple getFichas() {
+        return fichas;
+    }
+
+    /**
+     * @param fichas the fichas to set
+     */
+    public void setFichas(Lista_Simple fichas) {
+        this.fichas = fichas;
     }
 
     /**

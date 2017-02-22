@@ -19,9 +19,10 @@ public class Scrabble_201213001 {
         Inicio in = new Inicio();
         in.setVisible(true);
         
-        
-        
-        
+       
+       
+       
+       
     }
     
 }

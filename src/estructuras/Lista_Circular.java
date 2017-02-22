@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package estructuras;
-
+import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Alessandra
@@ -41,15 +43,52 @@ public class Lista_Circular {
     
     
     public void Imprimir(){
-        NodoJugador aux;
-        if(!esVacia()){
-            aux = inicio;
-            while(aux != ultimo){
-                System.out.println(""+aux.getNombre_Jugador());
-                aux = aux.getSiguiente();
+        NodoJugador aux = inicio;
+        
+        do{
+            if(!esVacia()){
+            System.out.println(""+aux.getNombre_Jugador());
+            aux = aux.getSiguiente();
+            }else{
+                System.out.println("no se encontro ningun jugador");
             }
-        }else {
-            System.out.println("no tiene ningun elemento la llista circular");
-        }
+        }while(aux != inicio);
     }
+    
+    public void graficar_Jugador(){
+        NodoJugador aux = inicio;
+        String[] cmd = new String[5];
+        try {
+            File archivo = new File("jugadores.txt");
+            BufferedWriter pw = new BufferedWriter(new FileWriter(archivo));
+            
+            pw.write("Digraph g{");
+            do{
+                
+                
+                pw.write("\""+aux.getNombre_Jugador()+"\""+"->"+"\""+aux.getSiguiente().getNombre_Jugador()+"\"");
+                aux = aux.getSiguiente();
+                
+            }while(aux!= inicio);
+            pw.write("}");
+            pw.close();
+            
+            cmd[0] = "C:\\Program Files (x86)\\Graphviz2.26.3\\bin\\dot.exe";
+            cmd[1] = "-Tpng";
+            cmd[2] = "jugadores.txt";
+            cmd[3] = "-o";
+            cmd[4] = "jugadores.png";
+        
+            Runtime rt = Runtime.getRuntime();
+            rt.exec(cmd);
+        } catch (IOException ex) {
+            Logger.getLogger(Lista_Circular.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+                
+        
+        
+    }
+    
 }
